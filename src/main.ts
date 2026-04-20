@@ -1,9 +1,9 @@
 const IMAGES = [
-  'https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=1600&auto=format&fit=crop', // Sea
-  'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600&auto=format&fit=crop', // Worship
-  'https://images.unsplash.com/photo-1507502707541-f369a3b18502?q=80&w=1600&auto=format&fit=crop', // Prayer
-  'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1600&auto=format&fit=crop', // Celebration
-  'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop', // Futuristic
+  'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1600', // Sea
+  'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600', // Worship
+  'https://images.unsplash.com/photo-1507502707541-f369a3b18502?q=80&w=1600', // Prayer
+  'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1600', // Celebration
+  'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600', // Futuristic
 ];
 
 const scrollContainer = document.getElementById('scroll-container')!;
