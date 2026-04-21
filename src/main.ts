@@ -1,7 +1,7 @@
 const IMAGES = [
   'https://images.unsplash.com/photo-1498623116890-37e912163d5d?q=80&w=1600', // Sea
-  'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600', // Worship
-  'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=1600', // Prayer
+  '/IMG_2.png', // Worship
+  '/IMG_3.png', // Prayer
   'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1600', // Celebration
   'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600', // Futuristic
 ];
