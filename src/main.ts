@@ -15,6 +15,14 @@ const THEMES: Theme[] = [
   {
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600',
     text: '땅 끝까지 전해질 생명의 복음'
+  },
+  {
+    image: './file_0.jpg',
+    text: '비전과 헌신으로 일구는 미래'
+  },
+  {
+    image: './file_1.jpg',
+    text: '세상을 변화시키는 작은 발걸음'
   }
 ];
 
