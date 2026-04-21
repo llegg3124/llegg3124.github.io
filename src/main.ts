@@ -1,39 +1,44 @@
-const IMAGES = [
-  'https://images.unsplash.com/photo-1498623116890-37e912163d5d?q=80&w=1600', // Sea
-  '/IMG_2.png', // Worship
-  '/IMG_3.png', // Prayer
-  'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1600', // Celebration
-  'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600', // Futuristic
+interface Theme {
+  image: string;
+  text: string;
+}
+
+const THEMES: Theme[] = [
+  {
+    image: './IMG_2.png',
+    text: '열방을 향한 뜨거운 선교의 마음'
+  },
+  {
+    image: './IMG_3.png',
+    text: '우리 땅 독도, 기도로 지키는 파수꾼'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600',
+    text: '땅 끝까지 전해질 생명의 복음'
+  }
 ];
 
 const scrollContainer = document.getElementById('scroll-container')!;
 const imageSequence = document.getElementById('image-sequence')!;
+const dynamicText = document.getElementById('dynamic-text')!;
 const images: HTMLDivElement[] = [];
 
 // Preload and Inject Images
-function initImages() {
-  IMAGES.forEach((src, index) => {
+function init() {
+  THEMES.forEach((theme, index) => {
     const div = document.createElement('div');
     div.className = 'scroll-image';
-    div.style.backgroundImage = `url(${src})`;
-    // Fallback colors to see something if images fail
-    div.style.backgroundColor = index % 2 === 0 ? '#f0f0f0' : '#e0e0e0';
+    div.style.backgroundImage = `url(${theme.image})`;
+    div.style.backgroundColor = '#000';
     
     imageSequence.appendChild(div);
     images.push(div);
     
-    // Explicitly try to load the image to check for errors
+    // Preload check
     const img = new Image();
-    img.src = src;
-    img.onload = () => console.log(`Image ${index} loaded`);
-    img.onerror = () => {
-      console.error(`Image ${index} failed to load from: ${src}`);
-      div.innerText = '이미지 로드 실패 (터널링 확인 필요)';
-      div.style.display = 'flex';
-      div.style.alignItems = 'center';
-      div.style.justifyContent = 'center';
-      div.style.color = '#ff0000';
-    };
+    img.src = theme.image;
+    img.onload = () => console.log(`Theme ${index} loaded`);
+    img.onerror = () => console.error(`Theme ${index} failed: ${theme.image}`);
   });
 }
 
@@ -42,61 +47,56 @@ function handleScroll() {
   const containerHeight = rect.height;
   const viewportHeight = window.innerHeight;
   
-  // Progress: 0 (start of container at bottom) to 1 (end of container at top)
-  // Adjusted for sticky: progress should be 0 when top of container hits top of viewport
-  // and 1 when bottom of container hits bottom of viewport.
-  
   const scrollTotal = containerHeight - viewportHeight;
   const currentScroll = -rect.top;
   
   let progress = currentScroll / scrollTotal;
   progress = Math.max(0, Math.min(1, progress));
 
+  const total = images.length;
+  
   images.forEach((img, index) => {
-    const total = images.length;
     const start = index / total;
     const end = (index + 1) / total;
     
     let opacity = 0;
+    let scale = 1.1;
 
-    if (index === 0) {
-      // First image: visible at start, fades out
-      if (progress <= end) {
-        opacity = 1 - (progress / end); // Simple fade out
-        // Stay visible a bit longer
-        if (progress < end - 0.1) opacity = 1;
-        else opacity = (end - progress) / 0.1;
+    // Transition logic
+    if (progress >= start && progress <= end) {
+      // Current image
+      const innerProgress = (progress - start) / (1 / total);
+      
+      // Fade in/out
+      if (innerProgress < 0.2) {
+        opacity = innerProgress / 0.2;
+      } else if (innerProgress > 0.8) {
+        opacity = (1 - innerProgress) / 0.2;
+      } else {
+        opacity = 1;
       }
-    } else if (index === total - 1) {
-      // Last image: fades in, stays visible
-      if (progress >= start) {
-        if (progress > start + 0.1) opacity = 1;
-        else opacity = (progress - start) / 0.1;
+      
+      // Zoom
+      scale = 1.1 - (0.1 * innerProgress);
+      
+      // Update Text
+      if (dynamicText.innerText !== THEMES[index].text) {
+        dynamicText.style.opacity = '0';
+        dynamicText.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          dynamicText.innerText = THEMES[index].text;
+          dynamicText.style.opacity = '1';
+          dynamicText.style.transform = 'translateY(0)';
+        }, 300);
       }
     } else {
-      // Middle images: fade in then fade out
-      if (progress >= start && progress <= end) {
-        if (progress < start + 0.1) {
-          opacity = (progress - start) / 0.1;
-        } else if (progress > end - 0.1) {
-          opacity = (end - progress) / 0.1;
-        } else {
-          opacity = 1;
-        }
-      }
+      opacity = 0;
+      scale = 1.1;
     }
 
     img.style.opacity = opacity.toString();
-    
-    // Zoom effect
-    const scale = 1.1 - (0.1 * (progress - start) / (end - start));
-    if (progress >= start && progress <= end) {
-       img.style.transform = `scale(${Math.max(1, scale)})`;
-    } else if (progress < start) {
-       img.style.transform = `scale(1.1)`;
-    } else {
-       img.style.transform = `scale(1)`;
-    }
+    img.style.transform = `scale(${scale})`;
+    img.style.zIndex = (progress >= start && progress <= end) ? '5' : '1';
   });
 }
 
@@ -113,6 +113,6 @@ window.addEventListener('scroll', () => {
 });
 
 // Init
-initImages();
-handleScroll(); // Initial state
-console.log('Dokdo Vanilla App Initialized');
+init();
+handleScroll();
+console.log('Mission-Dokdo-World App Initialized');
