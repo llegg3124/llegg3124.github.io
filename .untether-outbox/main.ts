@@ -23,10 +23,6 @@ const THEMES: Theme[] = [
   {
     image: '/file_1.jpg',
     text: '세상을 변화시키는 작은 발걸음'
-  },
-  {
-    image: '/file_3.jpg',
-    text: '세계 열방이 함께 세워가는 하나님의 교회'
   }
 ];
 
