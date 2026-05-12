@@ -4,7 +4,7 @@ import { ministryData, categories, MinistryItem } from './data/content';
 const Header = () => (
   <header className="header">
     <div className="container header-content">
-      <Link to="/" className="logo">제주P2C (CCC)제주훈련원</Link>
+      <Link to="/" className="logo">제주P2C (CCC) 제주훈련원</Link>
       <nav className="nav-links">
         <Link to="/category/church" className="nav-link">교회</Link>
         <Link to="/category/family" className="nav-link">가정</Link>
@@ -17,8 +17,9 @@ const Header = () => (
 const Footer = () => (
   <footer className="footer">
     <div className="container">
-      <p>&copy; 2024 제주P2C (CCC)제주훈련원. All rights reserved.</p>
-      <p>제주특별자치도 제주시 ... (본부 주소 생략)</p>
+      <p>&copy; 2024 제주P2C (CCC) 제주훈련원. All rights reserved.</p>
+      <p>제주특별자치도 제주시 </p>
+      <p>이언균 010-0000-0000 </p>
     </div>
   </footer>
 );
@@ -29,7 +30,7 @@ const Home = () => (
     <img src="/bg_1.jpg" alt="" className="decorative-img img-pos-2" />
     <section className="hero">
       <div className="container">
-        <h1>제주P2C (CCC)제주훈련원</h1>
+        <h1>제주P2C (CCC) 제주훈련원</h1>
         <p>도시 복음화와 영적 부흥을 향한 거룩한 발걸음</p>
       </div>
     </section>
