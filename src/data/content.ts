@@ -80,7 +80,8 @@ export const ministryData: MinistryItem[] = [
       'C (Care): 파악된 필요를 바탕으로 사랑과 서비스, 친절 실천.',
       'S (Share): 돌봄을 통해 마음이 열린 이들에게 복음 공유.',
       '교육: 9주 과정, 주 1회 2시간 (온/오프라인).'
-    ]
+    ],
+    image: '/file_9.jpg'
   },
   {
     id: 'edi-kids',
@@ -93,7 +94,8 @@ export const ministryData: MinistryItem[] = [
       '효용: 어른의 접근이 어려운 어린이는 물론 청소년, 장년에게도 복음적 접근 가능.',
       '방식: 교역자, 교사, 부모가 먼저 훈련받고 어린이에게 전도 DNA 전수.',
       '기대: 교회 전체를 생명력 있게 세우는 다음 세대 핵심 사역.'
-    ]
+    ],
+    image: '/file_8.jpg'
   },
   {
     id: 'familylife',
