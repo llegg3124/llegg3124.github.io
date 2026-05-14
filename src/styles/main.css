@@ -135,6 +135,14 @@ background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);  color: va
   margin-bottom: 10px;
 }
 
+.section-title p {
+  white-space: pre-wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.8;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
