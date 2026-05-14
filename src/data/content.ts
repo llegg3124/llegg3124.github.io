@@ -1,3 +1,10 @@
+export interface SubItem {
+  title: string;
+  tagline: string;
+  description: string;
+  list?: string[];
+}
+
 export interface MinistryItem {
   id: string;
   title: string;
@@ -5,6 +12,7 @@ export interface MinistryItem {
   description: string;
   details: string[];
   category: 'church' | 'family' | 'workplace';
+  subItems?: SubItem[];
 }
 
 export const ministryData: MinistryItem[] = [
@@ -71,6 +79,37 @@ export const ministryData: MinistryItem[] = [
       '활동: 결혼 준비 및 부부 관계 강화 세미나.',
       '자원: 자녀 양육(AOP) 및 생애 주기별 사역 콘텐츠 제공.',
       '확산: 국내외 교회들이 가정 중심 사역을 도입하도록 지원.'
+    ],
+    subItems: [
+      {
+        title: '1. 홈빌더 (HomeBuilder)',
+        tagline: '하나님이 기뻐하시는 가정을 세워가는 부부와 부모들',
+        description: '홈빌더는 성경적 원리로 된 FamilyLife 부부와 부모 시리즈 교재를 사용해 행복한 가정을 만들어가는 소그룹 모임(Small Group Meeting)입니다. 나눔 중심, 부부와 부모의 핵심문제 다루기(의사소통(Communication), 친밀감, 스트레스(Stress), 재정, 자존감, 하프타임, 자녀양육가치관, 양육 태도, 십대자녀양육 등), 부부갈등 예방과 해결, 자녀 양육의 지혜 공유, 관계 전도가 가능한 특징이 있습니다.',
+        list: [
+          '부부 시리즈 (Marriage Series)',
+          '서로 친밀한 부부 | 소통하는 부부 | 스트레스 잘 다루는 부부',
+          '재정 스마트 부부 | 갈등을 해결하는 부부 | 서로 세워주는 부부 | 하프타임에도 멋진 부부'
+        ]
+      },
+      {
+        title: '2. CCC 싱글즈 (CCC Singles)',
+        tagline: '내 짝을 찾아가는 여행',
+        description: '크리스찬 싱글 남녀들이 하나님이 예비하신 짝을 찾도록 돕는 매칭 프로그램입니다.',
+        list: [
+          '데이팅 포트폴리오(Dating Portfolio): 성경적 연애와 결혼관 정립',
+          '프로필 매칭(Profile Matching): 이성 프로필을 받아 연락과 만남',
+          '자만추 모임: 주제 강의 + 소그룹 나눔 + 후속 미팅(온라인(Online))',
+          '연말특집: 연말 오프라인(Offline) 프로그램 "러블릿지"(Love Bridge)'
+        ]
+      },
+      {
+        title: '3. The 아름다운 결혼(결혼예비학교)',
+        tagline: '사랑하는 이와 하나됨을 꿈꾸는 우리',
+        description: '예비커플에게는 결혼식보다 결혼생활을 준비할 수 있도록, 신혼커플에게는 현재의 결혼을 다루어 서로가 하나 되고 성장하도록 돕습니다.',
+        list: [
+          '주요 키워드: 결혼, 하나님의 설레임 | 결혼과 자존감 | 커플체크업(Couple Check-up) | 커플 의사소통 | 커플 재정관리(Financial Management) | 행복한 성(性)'
+        ]
+      }
     ]
   },
   {

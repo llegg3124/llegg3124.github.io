@@ -106,6 +106,27 @@ const DetailPage = () => {
                 <li key={idx}>{detail}</li>
               ))}
             </ul>
+            
+            {item.subItems && (
+              <div style={{ marginTop: '40px' }}>
+                <div className="card-grid">
+                  {item.subItems.map((sub, idx) => (
+                    <div key={idx} className="card" style={{ cursor: 'default' }}>
+                      <h3 style={{ fontSize: '1.25rem' }}>{sub.title}</h3>
+                      <p style={{ fontWeight: '600', color: 'var(--secondary)', marginBottom: '10px' }}>{sub.tagline}</p>
+                      <p className="card-description" style={{ fontSize: '0.95rem' }}>{sub.description}</p>
+                      {sub.list && (
+                        <ul className="detail-list" style={{ marginTop: 'auto' }}>
+                          {sub.list.map((li, lidx) => (
+                            <li key={lidx} style={{ fontSize: '0.9rem' }}>{li}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
