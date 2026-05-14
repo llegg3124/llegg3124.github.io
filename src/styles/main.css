@@ -132,15 +132,23 @@ background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);  color: va
 .section-title h2 {
   font-size: 2.5rem;
   color: var(--primary);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.section-title p {
-  white-space: pre-wrap;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #666;
-  line-height: 1.8;
+.category-description-box {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  background: #fff;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-left: 5px solid var(--primary);
+  text-align: left;
+}
+
+.category-description-box p {
+  line-height: 1.6;
+  margin: 0;
 }
 
 .card-grid {

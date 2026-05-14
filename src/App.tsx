@@ -67,7 +67,21 @@ const CategoryPage = () => {
       <div className="container">
         <div className="section-title">
           <h2>{category.title} 사역</h2>
-          <p>{category.description}</p>
+          <div className="category-description-box">
+            {category.description.split('\n').map((line, idx) => {
+              const isTitle = /^[0-9]\./.test(line.trim());
+              return (
+                <p key={idx} style={{ 
+                  fontWeight: isTitle ? '700' : '400',
+                  color: isTitle ? 'var(--primary)' : 'inherit',
+                  marginBottom: line.trim() === '' ? '15px' : '5px',
+                  fontSize: isTitle ? '1.2rem' : '1.1rem'
+                }}>
+                  {line}
+                </p>
+              );
+            })}
+          </div>
         </div>
         <div className="card-grid">
           {items.map(item => (
