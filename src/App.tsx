@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 import { ministryData, categories, MinistryItem } from './data/content';
 
 const Header = () => (
