@@ -115,7 +115,12 @@ const DetailPage = () => {
       </div>
       <div className="section">
         <div className="container">
-          <div className="detail-content" style={{ position: 'relative', overflow: 'hidden' }}>
+          <div className="detail-content" style={{ 
+            position: 'relative', 
+            overflow: 'hidden', 
+            backgroundColor: '#fff',
+            padding: 0 // Remove padding from parent to let background cover fully
+          }}>
             {item.backgroundImage && (
               <div style={{
                 position: 'absolute',
@@ -126,12 +131,17 @@ const DetailPage = () => {
                 backgroundImage: `url(${item.backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                filter: 'blur(8px)',
-                opacity: 0.2,
+                filter: 'blur(5px)',
+                opacity: 0.5,
                 zIndex: 0
               }} />
             )}
-            <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ 
+              position: 'relative', 
+              zIndex: 1, 
+              backgroundColor: item.backgroundImage ? 'rgba(255, 255, 255, 0.7)' : 'transparent',
+              padding: '40px' // Add padding back to the content wrapper
+            }}>
               <p className="detail-desc">{item.description}</p>
               <ul className="detail-list">
                 {item.details.map((detail, idx) => (
