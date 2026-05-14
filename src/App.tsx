@@ -115,38 +115,51 @@ const DetailPage = () => {
       </div>
       <div className="section">
         <div className="container">
-          <div className="detail-content" style={item.backgroundImage ? {
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url(${item.backgroundImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          } : {}}>
-            <p className="detail-desc">{item.description}</p>
-            <ul className="detail-list">
-              {item.details.map((detail, idx) => (
-                <li key={idx}>{detail}</li>
-              ))}
-            </ul>
-            
-            {item.subItems && (
-              <div style={{ marginTop: '40px' }}>
-                <div className="card-grid">
-                  {item.subItems.map((sub, idx) => (
-                    <div key={idx} className="card" style={{ cursor: 'default', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
-                      <h3 style={{ fontSize: '1.25rem' }}>{sub.title}</h3>
-                      <p style={{ fontWeight: '600', color: 'var(--secondary)', marginBottom: '10px' }}>{sub.tagline}</p>
-                      <p className="card-description" style={{ fontSize: '0.95rem' }}>{sub.description}</p>
-                      {sub.list && (
-                        <ul className="detail-list" style={{ marginTop: 'auto' }}>
-                          {sub.list.map((li, lidx) => (
-                            <li key={lidx} style={{ fontSize: '0.9rem' }}>{li}</li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <div className="detail-content" style={{ position: 'relative', overflow: 'hidden' }}>
+            {item.backgroundImage && (
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundImage: `url(${item.backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(8px)',
+                opacity: 0.2,
+                zIndex: 0
+              }} />
             )}
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <p className="detail-desc">{item.description}</p>
+              <ul className="detail-list">
+                {item.details.map((detail, idx) => (
+                  <li key={idx}>{detail}</li>
+                ))}
+              </ul>
+              
+              {item.subItems && (
+                <div style={{ marginTop: '40px' }}>
+                  <div className="card-grid">
+                    {item.subItems.map((sub, idx) => (
+                      <div key={idx} className="card" style={{ cursor: 'default', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
+                        <h3 style={{ fontSize: '1.25rem' }}>{sub.title}</h3>
+                        <p style={{ fontWeight: '600', color: 'var(--secondary)', marginBottom: '10px' }}>{sub.tagline}</p>
+                        <p className="card-description" style={{ fontSize: '0.95rem' }}>{sub.description}</p>
+                        {sub.list && (
+                          <ul className="detail-list" style={{ marginTop: 'auto' }}>
+                            {sub.list.map((li, lidx) => (
+                              <li key={lidx} style={{ fontSize: '0.9rem' }}>{li}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
