@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
-import { ministryData, categories, MinistryItem } from './data/content';
+import { ministryData, categories } from './data/content';
 
 const Header = () => (
   <header className="header">
@@ -106,36 +106,19 @@ const DetailPage = () => {
   if (!item) return <div>Item not found</div>;
 
   return (
-    <div style={{ position: 'relative', overflow: 'hidden' }}>
-      {item.backgroundImage && (
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `url(${item.backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(10px) brightness(0.7)',
-          transform: 'scale(1.1)',
-          zIndex: -1
-        }} />
-      )}
-      <div className="detail-header" style={item.backgroundImage ? { backgroundColor: 'transparent', color: 'white' } : {}}>
+    <div>
+      <div className="detail-header">
         <div className="container">
           <h1>{item.title}</h1>
-          <p className="detail-core" style={item.backgroundImage ? { color: '#eee' } : {}}>{item.coreMessage}</p>
+          <p className="detail-core">{item.coreMessage}</p>
         </div>
       </div>
-      <div className="section" style={item.backgroundImage ? { backgroundColor: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(5px)' } : {}}>
+      <div className="section">
         <div className="container">
-          <div className="detail-content" style={item.detailContentBackground ? {
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(${item.detailContentBackground})`,
+          <div className="detail-content" style={item.backgroundImage ? {
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url(${item.backgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            padding: '40px',
-            borderRadius: '12px',
           } : {}}>
             <p className="detail-desc">{item.description}</p>
             <ul className="detail-list">
@@ -148,7 +131,7 @@ const DetailPage = () => {
               <div style={{ marginTop: '40px' }}>
                 <div className="card-grid">
                   {item.subItems.map((sub, idx) => (
-                    <div key={idx} className="card" style={{ cursor: 'default' }}>
+                    <div key={idx} className="card" style={{ cursor: 'default', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
                       <h3 style={{ fontSize: '1.25rem' }}>{sub.title}</h3>
                       <p style={{ fontWeight: '600', color: 'var(--secondary)', marginBottom: '10px' }}>{sub.tagline}</p>
                       <p className="card-description" style={{ fontSize: '0.95rem' }}>{sub.description}</p>
