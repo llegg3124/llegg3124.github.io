@@ -14,6 +14,8 @@ export interface MinistryItem {
   category: 'church' | 'family' | 'workplace';
   subItems?: SubItem[];
   image?: string;
+  activityImage?: string;
+  backgroundImage?: string;
 }
 
 export interface Category {
@@ -36,7 +38,8 @@ export const ministryData: MinistryItem[] = [
       '기능: 대상자 입력, 알람 설정, 대상자 공유, 영상 전도 기능.',
       '교육: 2시간 압축 강의 및 실습 포함.',
       '성과: 2021년 이후 2,000개 이상의 교회 참여, 35만 회 이상의 방문 기록.'
-    ]
+    ],
+    activityImage: '/assets/cojourner_activity.jpg'
   },
   {
     id: 'thefour',
@@ -49,7 +52,9 @@ export const ministryData: MinistryItem[] = [
       '교육: 복음을 내면화한 성숙한 전도자 양성.',
       '활용: 노방 전도, 캠퍼스 사역, 단기 선교에 최적.',
       '일정: 1일 세미나(오후) 또는 2일 세미나(강의 및 실습).'
-    ]
+    ],
+    backgroundImage: '/assets/thefour_bg.jpg',
+    activityImage: '/assets/thefour_activity.jpg'
   },
   {
     id: 'edi-platform',

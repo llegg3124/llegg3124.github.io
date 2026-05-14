@@ -106,14 +106,29 @@ const DetailPage = () => {
   if (!item) return <div>Item not found</div>;
 
   return (
-    <div>
-      <div className="detail-header">
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
+      {item.backgroundImage && (
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url(${item.backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(10px) brightness(0.7)',
+          transform: 'scale(1.1)',
+          zIndex: -1
+        }} />
+      )}
+      <div className="detail-header" style={item.backgroundImage ? { backgroundColor: 'transparent', color: 'white' } : {}}>
         <div className="container">
           <h1>{item.title}</h1>
-          <p className="detail-core">{item.coreMessage}</p>
+          <p className="detail-core" style={item.backgroundImage ? { color: '#eee' } : {}}>{item.coreMessage}</p>
         </div>
       </div>
-      <div className="section">
+      <div className="section" style={item.backgroundImage ? { backgroundColor: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(5px)' } : {}}>
         <div className="container">
           <div className="detail-content">
             <p className="detail-desc">{item.description}</p>
@@ -146,18 +161,42 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
-      {item.image && (
+
+      {(item.image || item.activityImage) && (
         <div className="container" style={{ marginTop: '20px', textAlign: 'center' }}>
-          <img 
-            src={item.image} 
-            alt={item.title} 
-            style={{ 
-              maxWidth: '100%', 
-              borderRadius: 'var(--border-radius)', 
-              boxShadow: 'var(--shadow)',
-              marginBottom: '40px'
-            }} 
-          />
+          {item.image && (
+            <img 
+              src={item.image} 
+              alt={item.title} 
+              style={{ 
+                maxWidth: '100%', 
+                borderRadius: 'var(--border-radius)', 
+                boxShadow: 'var(--shadow)',
+                marginBottom: '40px'
+              }} 
+            />
+          )}
+          {item.activityImage && (
+            <div style={{ marginBottom: '60px' }}>
+              <h2 style={{ 
+                textAlign: 'center', 
+                marginBottom: '20px', 
+                color: 'var(--primary)',
+                fontSize: '1.8rem',
+                fontWeight: '700'
+              }}>활동 사진</h2>
+              <img 
+                src={item.activityImage} 
+                alt={`${item.title} 활동`} 
+                style={{ 
+                  maxWidth: '100%', 
+                  borderRadius: 'var(--border-radius)', 
+                  boxShadow: 'var(--shadow)',
+                  border: '8px solid white'
+                }} 
+              />
+            </div>
+          )}
         </div>
       )}
     </div>
