@@ -16,6 +16,7 @@ export interface MinistryItem {
   image?: string;
   activityImage?: string;
   backgroundImage?: string;
+  detailContentBackground?: string;
 }
 
 export interface Category {
@@ -53,7 +54,7 @@ export const ministryData: MinistryItem[] = [
       '활용: 노방 전도, 캠퍼스 사역, 단기 선교에 최적.',
       '일정: 1일 세미나(오후) 또는 2일 세미나(강의 및 실습).'
     ],
-    backgroundImage: '/assets/thefour_bg.jpg',
+    detailContentBackground: '/assets/file_5.jpg',
     activityImage: '/assets/thefour_activity.jpg'
   },
   {

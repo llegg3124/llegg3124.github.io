@@ -130,7 +130,13 @@ const DetailPage = () => {
       </div>
       <div className="section" style={item.backgroundImage ? { backgroundColor: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(5px)' } : {}}>
         <div className="container">
-          <div className="detail-content">
+          <div className="detail-content" style={item.detailContentBackground ? {
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(${item.detailContentBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            padding: '40px',
+            borderRadius: '12px',
+          } : {}}>
             <p className="detail-desc">{item.description}</p>
             <ul className="detail-list">
               {item.details.map((detail, idx) => (
@@ -178,13 +184,6 @@ const DetailPage = () => {
           )}
           {item.activityImage && (
             <div style={{ marginBottom: '60px' }}>
-              <h2 style={{ 
-                textAlign: 'center', 
-                marginBottom: '20px', 
-                color: 'var(--primary)',
-                fontSize: '1.8rem',
-                fontWeight: '700'
-              }}>활동 사진</h2>
               <img 
                 src={item.activityImage} 
                 alt={`${item.title} 활동`} 
