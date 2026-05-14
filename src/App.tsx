@@ -169,7 +169,7 @@ const DetailPage = () => {
             <div style={{ marginBottom: '60px' }}>
               <img 
                 src={item.activityImage} 
-                alt={`${item.title} 활동`} 
+                alt={item.title} 
                 style={{ 
                   maxWidth: '100%', 
                   borderRadius: 'var(--border-radius)', 
