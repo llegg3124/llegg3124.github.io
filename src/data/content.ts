@@ -70,6 +70,19 @@ export const ministryData: MinistryItem[] = [
     ]
   },
   {
+    id: 'edi-kids',
+    title: 'EDI 어린이에디',
+    category: 'church',
+    coreMessage: '어린이가 어린이를 전도하고 양육합니다.',
+    description: '어린이에디는 어린이가 어린이를 전도하고 양육함으로 어린이를 다음세대 사역의 주체로 세워가는 것을 돕습니다.',
+    details: [
+      '핵심: 어린이가 전도와 양육의 주체가 되도록 훈련.',
+      '효용: 어른의 접근이 어려운 어린이는 물론 청소년, 장년에게도 복음적 접근 가능.',
+      '방식: 교역자, 교사, 부모가 먼저 훈련받고 어린이에게 전도 DNA 전수.',
+      '기대: 교회 전체를 생명력 있게 세우는 다음 세대 핵심 사역.'
+    ]
+  },
+  {
     id: 'familylife',
     title: '패밀리라이프 (FamilyLife)',
     category: 'family',
