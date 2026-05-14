@@ -17,9 +17,9 @@ const Header = () => (
 const Footer = () => (
   <footer className="footer">
     <div className="container">
-      <p>&copy; 2024 제주P2C (CCC) 제주훈련원. All rights reserved.</p>
-      <p>제주특별자치도 제주시 </p>
-      <p>이언균 010-0000-0000 </p>
+      <p>&copy; 2026 제주P2C (CCC) 제주훈련원. All rights reserved.</p>
+      <p>제주특별자치도 제주시 이도 노브힐오피스텔 </p>
+      <p>문의: 이언균 010-3809-7451 </p>
     </div>
   </footer>
 );
