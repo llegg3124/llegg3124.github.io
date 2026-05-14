@@ -15,6 +15,13 @@ export interface MinistryItem {
   subItems?: SubItem[];
 }
 
+export interface Category {
+  id: string;
+  title: string;
+  description: string;
+  fullDescription?: string;
+}
+
 export const ministryData: MinistryItem[] = [
   {
     id: 'cojourner',
@@ -153,12 +160,21 @@ export const ministryData: MinistryItem[] = [
   }
 ];
 
-export const categories = [
+export const categories: Category[] = [
   { 
     id: 'church', 
     title: '교회', 
-    description: '1. 목회자/사모 리빌딩 운동\n목회자 부부 영성 회복 및 작은 교회 돕기\n\n2. 다음 세대를 향한 전략적 선교\n연합 캠프, 문화 페스티벌, 전문 사역자 양성\n\n3. 평신도 리더십 세우기 운동\n일터 사역(비즈니스 스쿨), \'THE FOUR\' 전도 훈련' 
+    description: '교회를 돕기 위한 프로그램',
+    fullDescription: '1. 목회자/사모 리빌딩 운동\n목회자 부부 영성 회복 및 작은 교회 돕기\n\n2. 다음 세대를 향한 전략적 선교\n연합 캠프, 문화 페스티벌, 전문 사역자 양성\n\n3. 평신도 리더십 세우기 운동\n일터 사역(비즈니스 스쿨), \'THE FOUR\' 전도 훈련' 
   },
-  { id: 'family', title: '가정', description: '건강하고 거룩한 가정을 세우기 위한 프로그램' },
-  { id: 'workplace', title: '일터', description: '신앙 정체성 확립과 영향력 있는 리더로의 성장' }
+  { 
+    id: 'family', 
+    title: '가정', 
+    description: '건강하고 거룩한 가정을 세우기 위한 프로그램' 
+  },
+  { 
+    id: 'workplace', 
+    title: '일터', 
+    description: '신앙 정체성 확립과 영향력 있는 리더로의 성장' 
+  }
 ];

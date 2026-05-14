@@ -62,13 +62,15 @@ const CategoryPage = () => {
 
   if (!category) return <div>Category not found</div>;
 
+  const displayDescription = category.fullDescription || category.description;
+
   return (
     <div className="section">
       <div className="container">
         <div className="section-title">
           <h2>{category.title} 사역</h2>
           <div className="category-description-box">
-            {category.description.split('\n').map((line, idx) => {
+            {displayDescription.split('\n').map((line, idx) => {
               const isTitle = /^[0-9]\./.test(line.trim());
               return (
                 <p key={idx} style={{ 
