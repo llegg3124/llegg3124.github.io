@@ -13,6 +13,7 @@ export interface MinistryItem {
   details: string[];
   category: 'church' | 'family' | 'workplace';
   subItems?: SubItem[];
+  image?: string;
 }
 
 export interface Category {
@@ -156,7 +157,8 @@ export const ministryData: MinistryItem[] = [
       '구조: 소그룹(6-8명), 8주 기초 과정 (주 1회 2시간).',
       '방법: 말씀 묵상, 실제 업무 사례 공유, 주간 실천 목표 설정.',
       '대상: 2030 청년부부터 4050 장년부 및 교회 리더십.'
-    ]
+    ],
+    image: '/fwia_bucket.jpg'
   }
 ];
 

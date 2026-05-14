@@ -146,6 +146,20 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
+      {item.image && (
+        <div className="container" style={{ marginTop: '20px', textAlign: 'center' }}>
+          <img 
+            src={item.image} 
+            alt={item.title} 
+            style={{ 
+              maxWidth: '100%', 
+              borderRadius: 'var(--border-radius)', 
+              boxShadow: 'var(--shadow)',
+              marginBottom: '40px'
+            }} 
+          />
+        </div>
+      )}
     </div>
   );
 };
