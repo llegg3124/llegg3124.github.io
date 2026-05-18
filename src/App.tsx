@@ -175,36 +175,20 @@ const DetailPage = () => {
       </div>
 
       {(item.image || item.activityImage) && (
-        <div className="container" style={{ marginTop: '40px', marginBottom: '60px', textAlign: 'center' }}>
-          <div style={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            justifyContent: 'center', 
-            gap: '30px' 
-          }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <div className="detail-image-container">
             {item.image && (
               <img 
                 src={item.image} 
                 alt={item.title} 
-                style={{ 
-                  maxWidth: item.activityImage ? 'calc(50% - 15px)' : '100%', 
-                  minWidth: '300px',
-                  borderRadius: 'var(--border-radius)', 
-                  boxShadow: 'var(--shadow)',
-                  objectFit: 'cover'
-                }} 
+                className={`detail-image ${item.activityImage ? 'double' : 'single'}`}
               />
             )}
             {item.activityImage && (
               <img 
                 src={item.activityImage} 
                 alt={item.title} 
-                style={{ 
-                  maxWidth: item.image ? 'calc(50% - 15px)' : '100%', 
-                  minWidth: '300px',
-                  borderRadius: 'var(--border-radius)', 
-                  boxShadow: 'var(--shadow)'
-                }} 
+                className={`detail-image ${item.image ? 'double' : 'single'}`}
               />
             )}
           </div>

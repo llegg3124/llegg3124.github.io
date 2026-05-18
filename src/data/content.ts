@@ -82,7 +82,8 @@ export const ministryData: MinistryItem[] = [
       'S (Share): 돌봄을 통해 마음이 열린 이들에게 복음 공유.',
       '교육: 9주 과정, 주 1회 2시간 (온/오프라인).'
     ],
-    image: '/file_9.jpg'
+    image: '/file_9.jpg',
+    activityImage: '/file_13.jpg'
   },
   {
     id: 'cojourner',
@@ -167,7 +168,8 @@ export const ministryData: MinistryItem[] = [
       '방법: 말씀 묵상, 실제 업무 사례 공유, 주간 실천 목표 설정.',
       '대상: 2030 청년부부터 4050 장년부 및 교회 리더십.'
     ],
-    image: '/fwia_bucket.jpg'
+    image: '/fwia_bucket.jpg',
+    activityImage: '/file_12.jpg'
   },
     {
     id: 'general-member',

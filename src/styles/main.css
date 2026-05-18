@@ -280,4 +280,37 @@ background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);  color: va
   .nav-links {
     gap: 15px;
   }
+  .detail-image-container {
+    gap: 20px !important;
+    margin-bottom: 60px !important;
+  }
+  .detail-image.double {
+    max-width: 100% !important;
+  }
+}
+
+.detail-image-container {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 40px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.detail-image {
+  border-radius: var(--border-radius); 
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  height: auto;
+}
+
+.detail-image.single {
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.detail-image.double {
+  max-width: 400px;
+  width: 100%;
 }
