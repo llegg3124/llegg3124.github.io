@@ -38,3 +38,14 @@ jobs:
         with:
           folder: dist
           branch: gh-pages
+
+      - name: Notify Telegram
+        if: always()
+        run: |
+          if [ -n "${{ secrets.TELEGRAM_BOT_TOKEN }}" ] && [ -n "${{ secrets.TELEGRAM_CHAT_ID }}" ]; then
+            curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+              -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+              -d text="✅ Task Complete: Jeju Ministry Deployment Finished!"
+          else
+            echo "Telegram credentials missing, skipping notification."
+          fi
