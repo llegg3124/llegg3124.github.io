@@ -175,33 +175,39 @@ const DetailPage = () => {
       </div>
 
       {(item.image || item.activityImage) && (
-        <div className="container" style={{ marginTop: '20px', textAlign: 'center' }}>
-          {item.image && (
-            <img 
-              src={item.image} 
-              alt={item.title} 
-              style={{ 
-                maxWidth: '100%', 
-                borderRadius: 'var(--border-radius)', 
-                boxShadow: 'var(--shadow)',
-                marginBottom: '40px'
-              }} 
-            />
-          )}
-          {item.activityImage && (
-            <div style={{ marginBottom: '60px' }}>
+        <div className="container" style={{ marginTop: '40px', marginBottom: '60px', textAlign: 'center' }}>
+          <div style={{ 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            justifyContent: 'center', 
+            gap: '30px' 
+          }}>
+            {item.image && (
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                style={{ 
+                  maxWidth: item.activityImage ? 'calc(50% - 15px)' : '100%', 
+                  minWidth: '300px',
+                  borderRadius: 'var(--border-radius)', 
+                  boxShadow: 'var(--shadow)',
+                  objectFit: 'cover'
+                }} 
+              />
+            )}
+            {item.activityImage && (
               <img 
                 src={item.activityImage} 
                 alt={item.title} 
                 style={{ 
-                  maxWidth: '100%', 
+                  maxWidth: item.image ? 'calc(50% - 15px)' : '100%', 
+                  minWidth: '300px',
                   borderRadius: 'var(--border-radius)', 
-                  boxShadow: 'var(--shadow)',
-                  border: '8px solid white'
+                  boxShadow: 'var(--shadow)'
                 }} 
               />
-            </div>
-          )}
+            )}
+          </div>
         </div>
       )}
     </div>

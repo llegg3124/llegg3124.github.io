@@ -52,7 +52,8 @@ export const ministryData: MinistryItem[] = [
       '디지털 콘텐츠: 영상, 웹툰, 카드뉴스 등 세대별 맞춤형 복음 콘텐츠 제공.',
       '교회 맞춤형: 참여 교회에 독자적인 플랫폼 구축 및 전도 전략 지원.',
       '관계 중심: SNS를 활용해 자연스러운 복음 제시 브릿지 역할.'
-    ]
+    ],
+    image: '/file_10.jpg'
   },
   {
     id: 'edi-kids',
@@ -66,7 +67,8 @@ export const ministryData: MinistryItem[] = [
       '방식: 교역자, 교사, 부모가 먼저 훈련받고 어린이에게 전도 DNA 전수.',
       '기대: 교회 전체를 생명력 있게 세우는 다음 세대 핵심 사역.'
     ],
-    image: '/file_8.jpg'
+    image: '/file_8.jpg',
+    activityImage: '/file_11.jpg'
   },
   {
     id: 'pcs',
