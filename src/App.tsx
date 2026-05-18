@@ -169,31 +169,29 @@ const DetailPage = () => {
                   </div>
                 </div>
               )}
+
+              {(item.image || item.activityImage) && (
+                <div className="detail-image-container">
+                  {item.image && (
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className={`detail-image ${item.activityImage ? 'double' : 'single'}`}
+                    />
+                  )}
+                  {item.activityImage && (
+                    <img 
+                      src={item.activityImage} 
+                      alt={item.title} 
+                      className={`detail-image ${item.image ? 'double' : 'single'}`}
+                    />
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
-
-      {(item.image || item.activityImage) && (
-        <div className="container" style={{ textAlign: 'center' }}>
-          <div className="detail-image-container">
-            {item.image && (
-              <img 
-                src={item.image} 
-                alt={item.title} 
-                className={`detail-image ${item.activityImage ? 'double' : 'single'}`}
-              />
-            )}
-            {item.activityImage && (
-              <img 
-                src={item.activityImage} 
-                alt={item.title} 
-                className={`detail-image ${item.image ? 'double' : 'single'}`}
-              />
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 };
