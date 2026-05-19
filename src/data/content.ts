@@ -16,6 +16,7 @@ export interface MinistryItem {
   image?: string;
   activityImage?: string;
   backgroundImage?: string;
+  additionalImages?: string[];
 }
 
 export interface Category {
@@ -38,6 +39,7 @@ export const ministryData: MinistryItem[] = [
       '기대 효과: 평신도 리더 역량 강화 및 교회 내 제자훈련 문화 정착',
       '운영 사례: 1기(23년 9-11월, 48명), 2기(24년 10-11월, 41명), 3기(25년 3-4월, 30명)'
     ],
+    additionalImages: ['/assets/file_14.jpg', '/assets/file_15.jpg', '/assets/file_16.jpg'],
     subItems: [
       {
         title: '1주차: THE FOUR 전도 훈련',
@@ -143,7 +145,7 @@ export const ministryData: MinistryItem[] = [
       '교육: 2시간 압축 강의 및 실습 포함.',
       '성과: 2021년 이후 2,000개 이상의 교회 참여, 35만 회 이상의 방문 기록.'
     ],
-    activityImage: '/assets/cojourner_activity.jpg'
+    activityImage: '/cojourner_activity.jpg'
   },
   {
     id: 'familylife',

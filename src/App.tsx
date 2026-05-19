@@ -194,6 +194,31 @@ const DetailPage = () => {
           </div>
         </div>
       )}
+
+      {item.additionalImages && (
+        <div className="container" style={{ textAlign: 'center', marginTop: '40px', marginBottom: '80px' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            gap: '20px',
+            alignItems: 'center'
+          }}>
+            {item.additionalImages.map((img, idx) => (
+              <img 
+                key={idx} 
+                src={img} 
+                alt={`${item.title} additional ${idx}`} 
+                style={{ 
+                  width: '100%', 
+                  borderRadius: '12px', 
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                  objectFit: 'cover'
+                }} 
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
