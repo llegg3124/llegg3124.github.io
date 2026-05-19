@@ -151,12 +151,12 @@ const DetailPage = () => {
               
               {item.subItems && (
                 <div style={{ marginTop: '40px' }}>
-                  <div className="card-grid">
+                  <div className="sub-card-grid">
                     {item.subItems.map((sub, idx) => (
-                      <div key={idx} className="card" style={{ cursor: 'default', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
-                        <h3 style={{ fontSize: '1.25rem' }}>{sub.title}</h3>
-                        <p style={{ fontWeight: '600', color: 'var(--secondary)', marginBottom: '10px' }}>{sub.tagline}</p>
-                        <p className="card-description" style={{ fontSize: '0.95rem' }}>{sub.description}</p>
+                      <div key={idx} className="sub-card">
+                        <h3>{sub.title}</h3>
+                        <p className="tagline">{sub.tagline}</p>
+                        <p className="description">{sub.description}</p>
                         {sub.list && (
                           <ul className="detail-list" style={{ marginTop: 'auto' }}>
                             {sub.list.map((li, lidx) => (

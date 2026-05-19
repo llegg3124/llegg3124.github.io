@@ -151,7 +151,7 @@ background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);  color: va
   margin: 0;
 }
 
-.card-grid {
+.card-grid, .sub-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
@@ -172,6 +172,39 @@ background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);  color: va
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.sub-card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  border: 1px solid #eee;
+  border-top: 4px solid var(--secondary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color 0.3s;
+}
+
+.sub-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.sub-card .tagline {
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.sub-card .description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  flex-grow: 1;
 }
 
 .card h3 {
