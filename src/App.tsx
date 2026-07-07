@@ -180,6 +180,24 @@ const DetailPage = () => {
           </div>
         )}
 
+        {item.id === 'p2p' && (
+          <div className="container" style={{ textAlign: 'center', marginTop: '40px', marginBottom: '80px' }}>
+            <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <img src="/p2p_1.jpg" alt="P2P 1" style={{ maxWidth: '480px', width: '100%', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
+              <img src="/p2p_2.jpg" alt="P2P 2" style={{ maxWidth: '480px', width: '100%', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
+            </div>
+          </div>
+        )}
+
+        {item.id === 'general-member' && (
+          <div className="container" style={{ textAlign: 'center', marginTop: '40px', marginBottom: '80px' }}>
+            <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <img src="/pengsin1.jpg" alt="평신도 리더십 훈련 1" style={{ maxWidth: '480px', width: '100%', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
+              <img src="/pengsin2.jpg" alt="평신도 리더십 훈련 2" style={{ maxWidth: '480px', width: '100%', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
+            </div>
+          </div>
+        )}
+
         {(item.image || item.activityImage) && (
           <div className="container" style={{ textAlign: 'center' }}>
           <div className="detail-image-container">
