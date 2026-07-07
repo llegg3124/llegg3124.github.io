@@ -174,8 +174,14 @@ const DetailPage = () => {
         </div>
       </div>
 
-      {(item.image || item.activityImage) && (
-        <div className="container" style={{ textAlign: 'center' }}>
+        {item.id === 'familylife' && (
+          <div className="container" style={{ textAlign: 'center', marginTop: '40px', marginBottom: '80px' }}>
+            <img src="/flife.jpeg" alt="FamilyLife" style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
+          </div>
+        )}
+
+        {(item.image || item.activityImage) && (
+          <div className="container" style={{ textAlign: 'center' }}>
           <div className="detail-image-container">
             {item.image && (
               <img 
